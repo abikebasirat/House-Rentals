@@ -6,6 +6,7 @@ import Notification from './components/Notification';
 import Room from './components/rooms/Room';
 import { FoodBankRounded } from '@mui/icons-material';
 import About from './components/About';
+// import ConverterPage from './ConverterPage';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
       <Room />
+      {/* <ConverterPage /> */}
     
     </>
   );

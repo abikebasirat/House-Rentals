@@ -25,12 +25,13 @@ import 'swiper/css/lazy';
 import 'swiper/css/zoom';
 import './swiper.css';
 import StripeCheckout from 'react-stripe-checkout';
+import {Link} from "react-router-dom"
 
 const Transition = forwardRef((props, ref) => {
   return <Slide direction="up" {...props} ref={ref} />;
 });
 
-const Room = () => {
+const Room = ({currencyFrom,currencyTo}) => {
 
   function onToken(token){
     console.log(token)
@@ -125,8 +126,7 @@ const Room = () => {
               <Typography component="span">
                 {room?.price === 0 ? 'Free Stay' : '$' + room?.price}
               </Typography>
-            </Box>
-            <Box
+            </Box>            <Box
               sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -168,9 +168,9 @@ const Room = () => {
               {'Details: '}
             </Typography>
             <Typography component="span">{room?.description}</Typography>
-            <ConverterPage titleFrom=' fromCurrency.room?.price' titleTo='tocurrency.room?.price'/>
 
-            <div style ={{textAlign: 'center', marginTop: '15rem'}}>
+            <ConverterPage correncyFrom={currencyFrom} currencyTo={currencyTo}  />
+            <div style ={{textAlign: 'center', marginBottom: '15rem'}}>
     <StripeCheckout 
      amount={room?.price * 100}
     
@@ -180,7 +180,7 @@ const Room = () => {
      stripeKey='pk_test_51PsppnISCf6RR6ChEPMTT0M0DTfRdPYTUuuqNJw7GYNv7g6QDFBwtQgp8w5HHuoAg1mFqNqovsGEbjPKKydM877000c9bmuuEz'
      >
         <button style={{padding:'1rem 2rem' , background:'green', color:'white',borderRadius:'12px',
-            cursor:'pointer'}}>Pay Now</button>
+            cursor:'pointer', marginBottom: '10rem'}}>Pay Now</button>
        </StripeCheckout>     
     </div>
 
