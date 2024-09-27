@@ -1,0 +1,27 @@
+{
+  "name": "k-rentals",
+  "version": "1.0.0",
+  "description":"## Lessons",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && npm start & cd client && npm start",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build-server": "cd server && npm install && npm build",	
+    "build": "cd server && npm install && npm build && cd ../client && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "repository":{
+    "type": "git",
+    "url": "git+https://github.com/abikebasirat/House-Rentals.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+  "url": "https://github.com/abikebasirat/House-Rentals/issues"
+
+},
+"homepage": "https://github.com/abikebasirat/House-Rentals/new/master?filename=README.md"
+}
